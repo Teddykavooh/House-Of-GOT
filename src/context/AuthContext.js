@@ -1,5 +1,6 @@
-import { Children, React } from "react";
+import React from "react";
 import { onAuthStateChanged, getAuth } from "firebase/auth";
+// import firebase_app from "@/firebase/config";
 import { firebase_app } from "../firebase/config";
 
 const auth = getAuth(firebase_app);
@@ -8,7 +9,7 @@ export const AuthContext = React.createContext({});
 
 export const useAuthContext = () => React.useAuthContext(AuthContext);
 
-export const AuthContextProvider = ({ Children }) => {
+export const AuthContextProvider = ({ children }) => {
     const [user, setUser] = React.useState("");
     const [loading, setLoading] = React.useState(true);
 
@@ -27,7 +28,7 @@ export const AuthContextProvider = ({ Children }) => {
 
     return (
         <AuthContext.Provider value={{ user }}>
-            {loading ? <div>Loading ...</div> : Children}
+            {loading ? <div>Loading ...</div> : children}
         </AuthContext.Provider>
     );
 };
