@@ -1,0 +1,9 @@
+{
+    "extends": ["next/core-web-vitals", "prettier"],
+    "rules": {
+        "semi": ["error", "always"],
+        "quotes": ["error", "double"],
+        "react/react-in-jsx-scope": "off",
+        "no-trailing-spaces": "error"
+    }
+}
