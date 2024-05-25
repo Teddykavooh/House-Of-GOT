@@ -2,6 +2,7 @@
 import React from "react";
 import signUp from "../../firebase/auth/signup";
 import { useRouter } from "next/navigation";
+import styles from "../page.module.css";
 
 function Page() {
     const [email, setEmail] = React.useState("");
@@ -15,16 +16,17 @@ function Page() {
             return console.log(myError);
         }
         console.log(result);
-        return router.push("/admin");
+        alert("Sign-Up successfull");
+        router.push("/admin");
     };
 
     return (
-        <div className="wrapper">
-            <div className="form-wrapper">
-                <h1 className="mt-60 mb-30">Sign Up</h1>
-                <form onSubmit={handleForm} className="form">
-                    <label htmlFor="email">
-                        <p>Email</p>
+        <div className={styles.wrapper}>
+            <div className={styles.formWrapper}>
+                <h1 className={`${styles.mt60} ${styles.mb30} ${styles.title}`}>Sign Up</h1>
+                <form onSubmit={handleForm} className={styles.form}>
+                    <label className={styles.formLabel} htmlFor="email">
+                        <p className={styles.labelText}>Email</p>
                         <input
                             onChange={e => setEmail(e.target.value)}
                             required
@@ -32,10 +34,11 @@ function Page() {
                             name="email"
                             id="email"
                             placeholder="example@mail.com"
+                            className={styles.inputField}
                         />
                     </label>
-                    <label htmlFor="password">
-                        <p>Password</p>
+                    <label className={styles.formLabel} htmlFor="password">
+                        <p className={styles.labelText}>Password</p>
                         <input
                             onChange={e => setPassword(e.target.value)}
                             required
@@ -43,9 +46,10 @@ function Page() {
                             name="password"
                             id="password"
                             placeholder="your password"
+                            className={styles.inputField}
                         />
                     </label>
-                    <button type="submit">SignUp</button>
+                    <button className={styles.submitButton} type="submit">SignUp</button>
                 </form>
             </div>
         </div>

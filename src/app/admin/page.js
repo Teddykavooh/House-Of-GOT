@@ -2,17 +2,37 @@
 import React from "react";
 import { useAuthContext } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
+import styles from "../page.module.css";
+import { getAuth, signOut } from "firebase/auth";
 
 function Page() {
-    const { user } = useAuthContext;
+    const { user, loading } = useAuthContext();
     const router = useRouter();
 
-    React.useEffect (() => {
-        if (user == null) router.push("/");
-    }, [router, user]);
+    // React.useEffect (() => {
+    //     if (!loading && user == null) {
+    //         console.log("I got reached");
+    //         router.push("/");
+    //     }
+    // }, [loading, router, user]);
+
+    const logOut = async () => {
+        const auth = getAuth();
+        try {
+            await signOut(auth);
+            router.push("/home");
+        } catch (error) {
+            console.error("Error signing out: ", error);
+        }
+    };
 
     return (
-        <h1>Only logged-in users can view this page</h1>
+        <main className={styles.main}>
+            <h1>Only logged-in users can view this page</h1>
+            <h2>Add Data:</h2>
+            <a href="/addData" className={styles.c_link}>Add Gamers ...</a>
+            <button onClick={logOut} className={styles.logoutButton}>Log Out</button>
+        </main>
     );
 }
 

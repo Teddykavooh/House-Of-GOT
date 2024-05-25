@@ -41,6 +41,20 @@ export default function Home() {
 
             <div className={styles.grid}>
                 <a
+                    href="/home"
+                    className={styles.card}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <h2>
+                        House Of GOT <span>-&gt;</span>
+                    </h2>
+                    <p>
+                        May the House Games begin ...
+                    </p>
+                </a>
+
+                <a
                     href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
                     className={styles.card}
                     target="_blank"
