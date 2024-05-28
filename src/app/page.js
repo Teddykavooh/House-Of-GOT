@@ -49,9 +49,7 @@ export default function Home() {
                     <h2>
                         House Of GOT <span>-&gt;</span>
                     </h2>
-                    <p>
-                        May the House Games begin ...
-                    </p>
+                    <p>May the House Games begin ...</p>
                 </a>
 
                 <a

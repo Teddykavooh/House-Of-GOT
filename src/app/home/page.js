@@ -41,10 +41,18 @@ export default function Page() {
                 ))}
             </div>
             <div className={styles.grid}>
-                <a href="/addData" className={styles.c_link}>Add more gamers ...</a>
-                <a href="/signup" className={styles.c_link}>Sign Up ...</a>
-                <a href="/signin" className={styles.c_link}>Sign In ...</a>
-                <a href="/" className={styles.c_link}>Default ...</a>
+                <a href="/addData" className={styles.c_link}>
+                    Add more gamers ...
+                </a>
+                <a href="/signup" className={styles.c_link}>
+                    Sign Up ...
+                </a>
+                <a href="/signin" className={styles.c_link}>
+                    Sign In ...
+                </a>
+                <a href="/" className={styles.c_link}>
+                    Default ...
+                </a>
             </div>
         </main>
     );

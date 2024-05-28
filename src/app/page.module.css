@@ -374,3 +374,26 @@
 .logoutButton:hover {
     background-color: #c9302c;
 }
+
+/* Base styling for the label */
+.customCheckbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 16px;
+    -webkit-user-select: none;
+    user-select: none;
+    margin-top: 1rem;
+    justify-content: start;
+    /* border: 2px solid blue; */
+}
+
+.customCheckbox input[type="checkbox"] {
+    margin-right: 1rem;
+    height: 1rem;
+    width: 1rem;
+}
+
+.customCheckbox p {
+    font-weight: bold;
+}

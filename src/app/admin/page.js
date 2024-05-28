@@ -28,10 +28,16 @@ function Page() {
 
     return (
         <main className={styles.main}>
-            <h1>Only logged-in users can view this page</h1>
+            <h1>Only logged-in users should be in this page</h1>
             <h2>Add Data:</h2>
-            <a href="/addData" className={styles.c_link}>Add Gamers ...</a>
-            <button onClick={logOut} className={styles.logoutButton}>Log Out</button>
+            <a href="/addData" className={styles.c_link}>
+                Add Gamers ...
+            </a>
+            {user && (
+                <button onClick={logOut} className={styles.logoutButton}>
+                    Log Out
+                </button>
+            )}
         </main>
     );
 }
