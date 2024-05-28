@@ -11,7 +11,7 @@ export default function AddData() {
     const { user, loading } = useAuthContext();
     const router = useRouter();
 
-    React.useEffect (() => {
+    React.useEffect(() => {
         if (!loading && user == null) {
             console.log("I got reached,addData");
             alert("Sign-In to continue");
@@ -23,7 +23,7 @@ export default function AddData() {
         event.preventDefault();
         const data = {
             name: name,
-            house: house
+            house: house,
         };
         const { result, error } = await addData("houseofgot", data);
         if (error) {
@@ -36,17 +36,33 @@ export default function AddData() {
     return (
         <div className={styles.wrapper}>
             <div className={styles.formWrapper}>
-                <h1 className={`${styles.mt60} ${styles.mb30} ${styles.title}`}>Add Gamers ...</h1>
+                <h1 className={`${styles.mt60} ${styles.mb30} ${styles.title}`}>
+                    Add Gamers ...
+                </h1>
                 <form onSubmit={handleForm} className={styles.form}>
                     <label htmlFor="name" className={styles.formLabel}>
                         <p className={styles.labelText}>Name:</p>
-                        <input id="name" placeholder="John" required onChange={e => setName(e.target.value)} className={styles.inputField}/>
+                        <input
+                            id="name"
+                            placeholder="John"
+                            required
+                            onChange={e => setName(e.target.value)}
+                            className={styles.inputField}
+                        />
                     </label>
                     <label htmlFor="house" className={styles.formLabel}>
                         <p className={styles.labelText}>House:</p>
-                        <input id="house" placeholder="Stark" required onChange={e => setHouse(e.target.value)} className={styles.inputField}/>
+                        <input
+                            id="house"
+                            placeholder="Stark"
+                            required
+                            onChange={e => setHouse(e.target.value)}
+                            className={styles.inputField}
+                        />
                     </label>
-                    <button type="submit" className={styles.submitButton}>Submit</button>
+                    <button type="submit" className={styles.submitButton}>
+                        Submit
+                    </button>
                 </form>
             </div>
         </div>

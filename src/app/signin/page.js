@@ -15,6 +15,7 @@ function Page() {
         event.preventDefault();
         const { result, myError } = await signIn(email, password);
         if (myError) {
+            alert("Sign-In unsuccessfull; wrong email or password");
             return console.log(myError);
         }
         // console.log(result, status);
@@ -23,7 +24,7 @@ function Page() {
         return router.push("/admin");
     };
 
-    const handleCheckboxChange = (event) => {
+    const handleCheckboxChange = event => {
         const newStatus = event.target.checked;
         setStatus(newStatus);
         // console.log("Status should change to new: ", newStatus);
@@ -37,7 +38,9 @@ function Page() {
     return (
         <div className={styles.wrapper}>
             <div className={styles.formWrapper}>
-                <h1 className={`${styles.mt60} ${styles.mb30} ${styles.title}`}>Sign In</h1>
+                <h1 className={`${styles.mt60} ${styles.mb30} ${styles.title}`}>
+                    Sign In
+                </h1>
                 <form onSubmit={handleForm} className={styles.form}>
                     <label htmlFor="email" className={styles.formLabel}>
                         <p className={styles.labelText}>Email</p>
@@ -63,11 +66,19 @@ function Page() {
                             className={styles.inputField}
                         />
                     </label>
-                    <button type="submit" className={styles.submitButton}>SignIn</button>
+                    <button type="submit" className={styles.submitButton}>
+                        SignIn
+                    </button>
                     <label htmlFor="checker" className={styles.customCheckbox}>
-                        <input type="checkbox" className={styles.checkbox} id="checker" onChange={handleCheckboxChange} checked={status}/>
-                        <span className={styles.checkmark}></span>
-                        <p className={styles.labelText}>Remember me</p>
+                        <input
+                            type="checkbox"
+                            // className={styles.checkbox}
+                            id="checker"
+                            onChange={handleCheckboxChange}
+                            checked={status}
+                        />
+                        {/* <span className={styles.checkmark}></span> */}
+                        <p>Remember me</p>
                     </label>
                 </form>
             </div>

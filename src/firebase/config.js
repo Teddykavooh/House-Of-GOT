@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp, getApps } from "firebase/app";
+import { getAuth, inMemoryPersistence, setPersistence } from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -17,5 +18,15 @@ const firebaseConfig = {
 // Initialize Firebase
 const firebase_app =
     getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
+
+// Override default persistence
+// const auth = getAuth(firebase_app);
+// setPersistence(auth, inMemoryPersistence)
+//     .then(() => {
+//         console.log("Persistence set to NONE (inMemoryPersistence)");
+//     })
+//     .catch(error => {
+//         console.error("Error setting persistence:", error);
+//     });
 
 export default firebase_app;

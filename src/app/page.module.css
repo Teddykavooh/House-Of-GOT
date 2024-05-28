@@ -377,68 +377,23 @@
 
 /* Base styling for the label */
 .customCheckbox {
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
     align-items: center;
     font-size: 16px;
     -webkit-user-select: none;
     user-select: none;
     margin-top: 1rem;
-    position: relative;
+    justify-content: start;
     /* border: 2px solid blue; */
 }
 
-/* Hide the default checkbox */
 .customCheckbox input[type="checkbox"] {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-    /* display: none; */
-}
-
-/* Create a custom checkmark */
-.customCheckbox .checkmark {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-color: #ccc;
-    border-radius: 4px;
     margin-right: 1rem;
-    transition:
-        background-color 0.3s,
-        border 0.3s;
-    cursor: pointer;
-    position: relative;
-    transition:
-        background-color 0.3s,
-        border 0.3s;
+    height: 1rem;
+    width: 1rem;
 }
 
-/* When the checkbox is checked, change the background color */
-.customCheckbox input[type="checkbox"]:checked + .checkmark {
-    background-color: #4caf50;
-}
-
-/* Add a tick mark */
-.customCheckbox .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-/* Show the tick mark when checked */
-.customCheckbox input[type="checkbox"]:checked + .checkmark:after {
-    display: block;
-}
-
-/* Style the tick mark */
-.customCheckbox .checkmark:after {
-    left: 7px;
-    top: 3px;
-    width: 6px;
-    height: 12px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
+.customCheckbox p {
+    font-weight: bold;
 }

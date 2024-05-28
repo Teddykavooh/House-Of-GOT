@@ -13,6 +13,7 @@ function Page() {
         event.preventDefault();
         const { result, myError } = await signUp(email, password);
         if (myError) {
+            alert("Sign-Up unsuccessfull");
             return console.log(myError);
         }
         console.log(result);
@@ -23,7 +24,9 @@ function Page() {
     return (
         <div className={styles.wrapper}>
             <div className={styles.formWrapper}>
-                <h1 className={`${styles.mt60} ${styles.mb30} ${styles.title}`}>Sign Up</h1>
+                <h1 className={`${styles.mt60} ${styles.mb30} ${styles.title}`}>
+                    Sign Up
+                </h1>
                 <form onSubmit={handleForm} className={styles.form}>
                     <label className={styles.formLabel} htmlFor="email">
                         <p className={styles.labelText}>Email</p>
@@ -49,7 +52,9 @@ function Page() {
                             className={styles.inputField}
                         />
                     </label>
-                    <button className={styles.submitButton} type="submit">SignUp</button>
+                    <button className={styles.submitButton} type="submit">
+                        SignUp
+                    </button>
                 </form>
             </div>
         </div>
