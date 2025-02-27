@@ -54,3 +54,11 @@ Create a `.prettierignore` file to let the Prettier CLI and editors know which f
 `npx prettier . --check` - Check if files are formatted.
 
 `npm install --save-dev eslint-config-prettier` - Install `eslint-config-prettier` to make ESLint and Prettier play nice.
+
+## NOTE
+
+You've got to install them dependencies before you go poking `npm install`
+
+Let loose, have fun and goodluck in your ventures.
+
+🎉🎈😁
