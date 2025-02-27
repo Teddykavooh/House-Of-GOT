@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/bd880a95-3e15-490a-903f-5429936b3165/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/azure-bug-bash-house-of-got",
+    "appService.deploySubpath": "."
+}
